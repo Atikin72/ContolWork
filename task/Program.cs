@@ -25,3 +25,28 @@ void PrintArray(string[] array)
         Console.Write("]");
     }
 }
+
+string[] FilterStrings(string[] array)
+{
+    int coin = 0;
+    foreach (string str in array)
+    {
+        if (str.Length <= 3) coin++;
+    }
+
+    // Создать новый массив из подходящих строк с учетом длины
+    string[] result = new string[coin];
+    int index = 0;
+
+    // Заполнить новый массив
+    foreach (string str in array)
+    {
+        if (str.Length <= 3)
+        {
+            result[index] = str;
+            index++;
+        }
+    }
+
+    return result;
+}
