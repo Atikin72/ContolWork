@@ -13,8 +13,6 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-using Internal;
-
 void PrintArray(string[] array)
 {
     for (int i = 0; i < array.)
