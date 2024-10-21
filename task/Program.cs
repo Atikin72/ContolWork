@@ -15,25 +15,26 @@
 
 void PrintArray(string[] array)
 {
-    for (int i = 0; i < array.)
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write("[");
-        Console.WriteLine($"\"{array[i]}\"");
+        Console.Write($"\"{array[i]}\"");
         if (i < array.Length - 1) Console.Write(", ");
-        Console.Write("]");
     }
+    Console.Write("]");
+    Console.WriteLine();
 }
 
 string[] FilterStrings(string[] array)
 {
-    int coin = 0;
+    int count = 0;
     foreach (string str in array)
     {
-        if (str.Length <= 3) coin++;
+        if (str.Length <= 3) count++;
     }
 
-    // Создать новый массив из подходящих строк с учетом длины
-    string[] result = new string[coin];
+    // Создать новый массив из подходящих строк
+    string[] result = new string[count];
     int index = 0;
 
     // Заполнить новый массив
@@ -48,3 +49,11 @@ string[] FilterStrings(string[] array)
 
     return result;
 }
+
+string[] array = { "Hello", "2", "world", ":-)" };
+Console.Write("Изначальный массив: ");
+PrintArray(array);
+
+string[] resultArray = FilterStrings(array);
+Console.Write("Массив с длиной строк меньше или равны 3 символам: ");
+PrintArray(resultArray);
